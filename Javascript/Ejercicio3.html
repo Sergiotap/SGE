@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archivo de prueba</title>
+</head>
+<body>
+    <script>
+        let nota
+        let media = parseInt(0)
+        let calificacion
+        let i=parseInt(0)
+        while (i< 6){
+            nota = parseInt(window.prompt("Introduce la nota: "))
+            while (nota > 10 || nota < 1) {
+                nota = parseInt(window.prompt("Introduce la nota: "))
+            }
+            document.write(nota, ", ")
+            if (nota <= 10 && nota >= 1)
+                i++  
+            media = media + nota
+        }
+        media = media / 6
+        switch(true){
+            case  media <= 10 && media >= 9:
+                calificacion = 'Sobresaliente'
+                document.write("Se han introducido un total de ", i, " y se ha adquirido una media de ", calificacion, " cuyo número es ", media)
+                break;
+            case media<9&&media>=7:
+                calificacion='Notable'
+                document.write("Se han introducido un total de ", i, " y se ha adquirido una media de ", calificacion, " cuyo número es ", media)
+                break;
+            case media<7&&media>=5:
+                calificacion='Aprobado'
+                document.write("Se han introducido un total de ", i, " y se ha adquirido una media de ", calificacion, " cuyo número es ", media)
+                break;
+            default:
+                calificacion='Suspenso'
+                document.write("Se han introducido un total de ", i, " y se ha adquirido una media de ", calificacion, " cuyo número es ", media)
+                break;
+        }        
+    </script>
+</body>
+
+</html>
