@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archivo de prueba</title>
+</head>
+<body>
+    <script>
+var marca
+var modelo
+var descuento = 0
+marca = window.prompt("Introduce la marca del coche: ");
+modelo = window.prompt("Introduce el modelo del coche: ");
+if (marca == 'ford')
+if (modelo == 'fiesta')
+descuento = 5
+else if (modelo == 'focus')
+descuento = 10
+else
+descuento = 0
+document.write("Tu descuento es del ", descuento, "%")
+var day = window.prompt("Introduce el día de la semana: ");
+day = day.toLowerCase()
+switch (day) {
+case 'sábado':
+case 'sabado':
+case 'domingo':
+document.write("Es fin de semana")
+break;
+case 'lunes':
+case 'martes':
+case 'miércoles':
+case 'miercoles':
+case 'jueves':
+case 'viernes':
+document.write("no es fin de semana")
+break;
+default:
+document.write("No es un día")
+break;
+}
+</script>
+</body>
+</html>
