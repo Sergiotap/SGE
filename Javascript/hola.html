@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Archivo de prueba</title>
+</head>
+<body>
+    <script>
+        /*marca=window.prompt("Escribe la marca")
+        marca=="ford" ? modelo=window.prompt("Escribe el modelo") : document.write("No hay descuentos")
+        modelo=="fiesta" ? descuento="El descuento es del 5%" : descuento="No hay descuentos"
+        modelo=="focus" ? descuento="El descuento es del 10%" : descuento="No hay descuentos"
+        document.write(descuento)*/
+        
+        /*dia=window.prompt("Introduce el dia").toLowerCase()
+        switch (dia) {
+            case 'lunes' || 'martes' || 'miercoles' || 'jueves' || 'viernes':
+                document.write("No es fin de semana")
+                break
+            case 'sabado' || 'domingo':
+                document.write("Es fin de semana")
+                break
+        }*/
+
+        /*media=0
+        for (let i = 0; i < 6; i++) {
+            nota=window.prompt("Introduce una nota")
+                document.writeln(nota)
+                nota>=9 && nota<=10 ? document.writeln("Sobresaliente") : nota>=7 && nota<=8 ? document.writeln("Notable") : nota>=5 && nota<=7 ? document.writeln("Aprobado") : nota<5 ? document.writeln("Suspenso") : document.writeln("La nota no es valida")
+                media+=parseInt(nota)
+                document.write("<br>")
+        }
+        media=parseInt(media)
+        document.write("La media es: " + media/6)*/
+        media=0
+        let asignaturas=new Array()
+        for (let i = 0; i < 6; i++) {
+            nota=window.prompt("Introduce una nota")
+            //document.writeln(nota)
+            if(nota>10||nota<0){
+                i--
+            }
+            else{
+                let numNota=parseInt(i)+1
+                media+=parseInt(nota)
+                asignaturas[i]=numNota  
+                asignaturas[i]=asignaturas[i]+" Nota: "+nota
+            }
+        }
+        for(i in asignaturas){
+            document.write(asignaturas[i]+"<br>")
+        }
+        media=parseInt(media)
+        media=media/6
+        media>=9 && media<=10 ? document.writeln("Sobresaliente") : media>=7 && media<9 ? document.writeln("Notable") : media>=5 && media<7 ? document.writeln("Aprobado") : media<5 ? document.writeln("Suspenso") : document.writeln("La nota no es valida")
+        document.write("La media es: " + media)
+    </script>
+</body>
+</html>
