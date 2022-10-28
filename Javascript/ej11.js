@@ -14,6 +14,7 @@ window.onload=function cambiarIdioma(){
         document.getElementById('crear').value='Create account'
         tags[10].innerHTML='--------------I have already an account--------------'
         document.getElementById('iniciar').value='Login'
+        document.getElementById('bandera')
     }
     else if(idioma=='de-DE'){
         tags[0].innerHTML='Konto anlegen'
