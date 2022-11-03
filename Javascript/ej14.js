@@ -1,0 +1,3 @@
+document.getElementById('b1').addEventListener('click',()=>alert('Hola '+document.getElementById('nombre').value),false)
+document.getElementById('b2').addEventListener('click',()=>alert('Tu edad en 2030 será '+(parseInt(document.getElementById('edad').value)+8)),false)
+document.getElementById('b3').addEventListener('click',()=>alert('Hola '+document.getElementById('nombre').value+', tu equipo es '+document.getElementById('equipo').value),false)
