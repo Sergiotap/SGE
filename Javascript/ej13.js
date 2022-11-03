@@ -2,15 +2,15 @@ const Persona={
     nombre: "Sergio",
     edad: 20,
     sexo:'H',
-    /*asignaturas:[
-        "AD",
-        "SGE",
-        "PMDM",
-        "DI",
-        "PSP",
-        "ITGS",
-        "EIE"
-    ],*/
+    asignaturas:[
+        "Aisgnatura: AD",
+        "Aisgnatura: SGE",
+        "Aisgnatura: PMDM",
+        "Aisgnatura: DI",
+        "Aisgnatura: PSP",
+        "Aisgnatura: ITGS",
+        "Aisgnatura: EIE"
+    ],
     telefono:686001205,
     coche:"false"
 }
@@ -68,10 +68,11 @@ const Amigo3={
 }
 let numAsig=window.prompt("Introduce el número de asignaturas")
 numAsig=parseInt(numAsig)
-asignaturas:[]
 for( i=0; i<numAsig;i++){
     asignatura:window.prompt("Introduce la asignatura")
-    asignaturas[i]=asignatura
+    asignaturas.push(
+        "Aisgnatura: :asignatura"
+    )
 }
 Persona.asignaturas=asignaturas
 Amigos.Amigo1=Amigo1
