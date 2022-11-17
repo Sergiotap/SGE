@@ -1,0 +1,39 @@
+1.-
+const num=[1,2,3,43,34,534]
+
+const doble=num.map(x=>x*2)
+
+const animales=[
+  {nombre:"pepe",
+  tipo:"gato",
+  edad:15},
+  {nombre:"pepe",
+  tipo:"perro",
+  edad:15},
+  {nombre:"pepe",
+  tipo:"pájaro",
+  edad:15} 
+]
+console.log(doble)
+console.log(animales.filter(x=>x.tipo==="perro"))
+console.log(doble.filter(x=>x<30))
+2.-
+const num=[1,2,3,43,34,534]
+const doble=num.map(x=>x*3).filter(x=>x<30)
+const suma=num.reduce((acc,act)=>acc*act,1)
+console.log(doble)
+console.log(suma)
+3.-
+const animales=[
+  {nombre:"pepe",
+  tipo:"gato",
+  edad:15},
+  {nombre:"pepe",
+  tipo:"perro",
+  edad:15},
+  {nombre:"pepe",
+  tipo:"perro",
+  edad:15} 
+]
+const suma=animales.reduce((acc,act)=>acc+act,0)
+console.log(animales.filter(x=>x.tipo==="perro").reduce((acc,act)=>acc+act.edad,0))
