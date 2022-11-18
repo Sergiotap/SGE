@@ -1,0 +1,28 @@
+body{
+    background-color: rgb(104, 23, 136);
+}
+.centrar{
+    margin: 0 auto;
+    height: 1000px;
+    width: 800px;
+    background-color: rgb(104, 23, 136);
+    color: rgb(16, 253, 210);
+}
+.tabla{
+    width: 700px;
+}
+.insert{
+    margin: 0;
+}
+.insert #nombre,#salario{
+    margin-left: 230px;
+}
+.insert #add{
+    margin-top: 20px;
+    margin-left: 120px;
+    margin-bottom: 20px;
+}
+.insert #edit,#del,#showID,#showAll{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
