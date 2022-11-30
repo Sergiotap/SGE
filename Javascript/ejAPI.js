@@ -5,30 +5,7 @@ document.getElementById('edit').addEventListener('click',editar,false)
 document.getElementById('del').addEventListener('click',eliminar,false)
 document.getElementById('showID').addEventListener('click',mostrarID,false)
 document.getElementById('showAll').addEventListener('click',mostrar,false)
-function mostrar(){
-    const options = {
-        method:"GET"
-    }
-    fetch(yourUrl, options)
-        .then(response => response.json())
-        .then((data) =>
-        {   for (i=1;i<((data.length)+1);i++){
-                let tabla=document.getElementById('tabla')
-                let row=tabla.insertRow(i)
-                let celda1=row.insertCell(0)
-                let celda2=row.insertCell(1)
-                let celda3=row.insertCell(2)
-                let textoID=document.createTextNode(data[i-1].id)
-                celda1.appendChild(textoID)
-                let textoNombre=document.createTextNode(data[i-1].name)
-                celda2.appendChild(textoNombre)
-                let textoSalario=document.createTextNode(data[i-1].salary)
-                celda3.appendChild(textoSalario)
-            }
-        }
-        )
-}
-function mostrarID(){
+function abrirNuevoTab(url) {
     const options = {
         method:"GET"
     }
@@ -41,20 +18,41 @@ function mostrarID(){
                 alert('El empleado con id '+id+' no existe')
             }
             else{
-                let tabla=document.getElementById('tabla')
-                let row=tabla.insertRow(1)
-                let celda1=row.insertCell(0)
-                let celda2=row.insertCell(1)
-                let celda3=row.insertCell(2)
-                let textoID=document.createTextNode(data.id)
-                celda1.appendChild(textoID)
-                let textoNombre=document.createTextNode(data.name)
-                celda2.appendChild(textoNombre)
-                let textoSalario=document.createTextNode(data.salary)
-                celda3.appendChild(textoSalario)
+                
+                const parsedUrl = 'file:///home/sergiotap/Documentos/SGE/Javascript/recibeAPI.html'
+                window.open(parsedUrl+"?id="+id)
+                
             }
         }
     )
+}
+function mostrar(){
+    const options = {
+        method:"GET"
+    }
+    fetch(yourUrl, options)
+        .then(response => response.json())
+        .then((data) =>
+        {   for (i=1;i<((data.length)+1);i++){
+                id=data[i-1].id
+                let tabla=document.getElementById('tabla')
+                let row=tabla.insertRow(i)
+                let celda1=row.insertCell(0)
+                let celda2=row.insertCell(1)
+                let celda3=row.insertCell(2)
+                
+                celda1.innerHTML=('<a href="recibeAPI.html?id='+data[i-1].id+'" target="_blank">'+data[i-1].id+'</a>')
+                let textoNombre=document.createTextNode(data[i-1].name)
+                celda2.appendChild(textoNombre)
+                let textoSalario=document.createTextNode(data[i-1].salary)
+                celda3.appendChild(textoSalario)
+            }
+        }
+        )
+}
+function mostrarID(){
+    let id=window.prompt("Introduce el id del usuario a mostrar")
+    verID(id)
 }
 function eliminar(){
     const options = {
@@ -144,4 +142,31 @@ function contieneNumeros(str){
 }
 function contieneLetras(str) {
     return /[a-zA-Z]/.test(str);
+}
+function verID(id){
+    const options = {
+        method:"GET"
+    }
+    fetch(yourUrl+"/"+id, options)
+        .then(response => response.json())
+        .then((data) =>
+            {                
+            if(JSON.stringify(data)==='{"message":"Employee not found"}'){
+                alert('El empleado con id '+id+' no existe')
+            }
+            else{
+                let tabla=document.getElementById('tabla')
+                let row=tabla.insertRow(1)
+                let celda1=row.insertCell(0)
+                let celda2=row.insertCell(1)
+                let celda3=row.insertCell(2)
+                let textoID=document.createTextNode(data.id)
+                celda1.appendChild(textoID)
+                let textoNombre=document.createTextNode(data.name)
+                celda2.appendChild(textoNombre)
+                let textoSalario=document.createTextNode(data.salary)
+                celda3.appendChild(textoSalario)
+            }
+        }
+    )
 }
